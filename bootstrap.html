@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/script.js"></script>
+
+</head>
+
+<body>
+    <form class="needs-validation" novalidate>
+        <h2 style="text-align: center;">FORM </h2>
+        <div class="row">
+            <div class="col-3 my-3 mx-5">
+                <label for="F1">FIRST NAME</label>
+                <input type="text" class="form-control" id="fname" placeholder="First name" aria-label="First name"
+                    required>
+                <div class="invalid-feedback">
+                    Please enter your first name.
+                </div>
+            </div>
+            <div class="col-3 my-3">
+                <label for="F1">LAST NAME</label>
+                <input type="text" class="form-control" id="lname" placeholder="Last name" aria-label="Last name"
+                    required><br>
+                <div class="invalid-feedback">
+                    Please enter your last name.
+                </div>
+            </div>
+        </div>
+        <div class="row g-3">
+            <div class="col-3 mx-5">
+                <label for="inputDateOfBirth" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" id="dob" name="dateOfBirth" required>
+                <div class="invalid-feedback">Please provide a valid date of birth.</div>
+            </div>
+        </div>
+        <div class="row g-3">
+            <div class="col-3 mx-5">
+                <label for="inputDateOfBirth" class="form-label">joining date</label>
+                <input type="date" class="form-control" id="jd" name="dateOfBirth" required>
+                <div class="invalid-feedback">Please provide a valid date .</div>
+            </div>
+        </div>
+
+        <div class="mx-5">
+            <label for="l1">LANGUAGES KNOWN</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="languages[]" id="flexCheckDefault1" value="tamil">
+                <label class="form-check-label" for="flexCheckDefault1">
+                    Tamil
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="languages[]" id="flexCheckDefault1"
+                    value="english">
+                <label class="form-check-label" for="flexCheckDefault2">
+                    English
+                </label>
+            </div>
+            <div class="invalid-feedback">
+                Please select at least one language.
+            </div>
+        </div>
+
+        <div class="mx-5">
+            <label for="l1">GENDER</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" required>
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" required>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Female
+                </label>
+            </div>
+            <div class="invalid-feedback">
+                Please select your gender.
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-3 mx-5">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" required
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                <div class="invalid-feedback">
+                    Please enter a valid email address.
+                </div>
+            </div>
+            <div class="col-3">
+                <label for="inputPassword4" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword4" required>
+                <div class="invalid-feedback">
+                    Please enter a password.
+                </div>
+            </div>
+
+            <div class="col-3">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+                <div class="invalid-feedback">
+                    Please enter your address.
+                </div>
+            </div>
+            <div class="col-3 mx-5">
+                <label for="inputAddress2" class="form-label">Address 2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="col-md-3">
+                <label for="inputCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="inputCity" required>
+                <div class="invalid-feedback">
+                    Please enter a city.
+                </div>
+            </div>
+            <div class="col-2 mx-5">
+                <label for="inputZip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="inputZip" required>
+                <div class="invalid-feedback">
+                    Please enter a valid zip code.
+                </div>
+            </div>
+
+            <div class=" col-3 mx-5 mb-3">
+                <label for="fileUpload" class="form-label">Upload File</label>
+                <input type="file" class="form-control" id="fileUpload" required>
+                <div class="invalid-feedback">Please choose a file to upload.</div>
+            </div>
+
+            <div class="col-12 mx-5">
+
+                <div id="formDetails"></div>
+                <button type="submit" id="submitButton" class="btn btn-primary">SUBMIT</button>
+
+            </div>
+
+
+
+        </div>
+    </form>
+
+    <script>
+
+        (function () {
+            'use strict'
+
+
+            var forms = document.querySelectorAll('.needs-validation')
+
+
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+
+
+
+    <script>
+        function validate(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Perform validation checks
+            const form = document.querySelector('.needs-validation');
+            if (!form.checkValidity()) {
+                event.stopPropagation();
+                form.classList.add('was-validated');
+                return;
+            }
+
+            // Extract form values
+            const fname = document.getElementById('fname').value;
+            const lname = document.getElementById('lname').value;
+            const email = document.getElementById('inputEmail4').value;
+            const dob = document.getElementById('dob').value;
+            const jd = document.getElementById('jd').value;
+            const address = document.getElementById('inputAddress').value;
+            const city = document.getElementById('inputCity').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const languages = document.querySelectorAll('input[name="languages[]"]:checked');
+            const selectedLanguages = Array.from(languages).map(lang => lang.value);
+            const myfile = document.getElementById('fileUpload').value;
+
+            // Calculate age
+            const currentYear = new Date().getFullYear();
+            const birthYear = new Date(dob).getFullYear();
+            const calculatedAge = currentYear - birthYear;
+
+
+            var joinYear = new Date(jd).getFullYear();
+            var calculatedExperience = currentYear - joinYear;
+
+            // Display form details
+            const details = document.getElementById('formDetails');
+            document.write(`<h2>Form Details</h2>
+    <p>Name: ${fname} ${lname}</p>
+    <p>Email: ${email}</p>
+    <p>Date of Birth: ${dob}</p>
+    <p>Address: ${address}</p>
+    <p>City: ${city}</p>
+    <p>Gender: ${gender}</p>
+    <p>Languages Known: ${selectedLanguages.join(', ')}</p>
+    <p>joining date: ${jd} </p>
+    <p>resume: ${myfile} </p>
+    <p>experience: ${calculatedExperience} years</p>
+    <p>Age: ${calculatedAge} years</p>`)
+        }
+
+     document.getElementById('submitButton').addEventListener('click', validate);
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

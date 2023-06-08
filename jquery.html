@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <form id="myForm" name="myform" class="needs-validation">
+        <fieldset>
+            <legend>FORM</legend>
+
+            <!-- first name -->
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <span id="fnameError" class="error"></span><br>
+            <!-- last name -->
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" required>
+            <span id="lnameError" class="error"></span><br><br>
+
+            <!-- date of birth -->
+            <label for="dob">Date of birth:</label>
+            <input type="date" id="dob" name="dob">
+            <span id="dobError" class="error"></span><br><br>
+
+            
+            <!-- joining date -->
+
+            <label for="jd">Joining date:</label>
+            <input type="date" id="jd" name="jd">
+            <span id="jdError" class="error"></span><br><br>
+
+            <!-- email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <span id="emailError" class="error"></span><br><br>
+
+            <!-- address -->
+            <label for="Address">Address:</label><br>
+            <textarea id="Address" name="Address" rows="3" cols="10"> </textarea>
+            <span id="addressError" class="error"></span><br><br>
+
+            <!--city -->
+            <label for="city">Choose a city:</label>
+            <input list="city-options" id="city-choice" name="city-choice">
+            <datalist id="city-options">
+                <option value="coimbatore">
+                <option value="chennai">
+                <option value="madurai">
+                <option value="trichy">
+                <option value="Erode">
+            </datalist>
+            <span id="cityError" class="error"></span><br><br>
+
+            <!-- gender radio button -->
+            <label for="gender">gender:</label><br>
+            <input type="radio" id="gender" name="gender" value="male">
+            <label for="male">male</label><br>
+            <input type="radio" id="gender" name="gender" value="female">
+            <label for="female">female</label>
+            <span id="genderError" class="error"></span><br><br>
+
+            <!-- languages checkbox -->
+            <label for="languages">Languages known:</label><br>
+            <input type="checkbox" id="l1" name="languages" value="Tamil">
+            <label for="l1"> Tamil</label><br>
+            <input type="checkbox" id="l1" name="languages" value="English">
+            <label for="l2"> English </label>
+
+            <span id="languagesError" class="error"></span><br><br>
+
+
+            <!-- option  and optgroup for area of interest  -->
+            <label for="interest">Interested in:</label>
+            <select id="interest">
+                <optgroup label="FRONTEND">
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                </optgroup>
+                <optgroup label="BACKEND">
+                    <option value="PHP">PHP</option>
+                    <option value=".NET">.NET</option>
+                </optgroup>
+                <option value="others">Others</option>
+                <input type="text" id="otherInterest" name="otherInterest" style="display: none;"
+                    placeholder="Enter other interest">
+            </select>
+
+
+            <script>
+                $(document).ready(function () {
+                    $("#interest").change(function () {
+                        var selectedOption = $(this).val();
+                        if (selectedOption === "others") {
+                            $("#otherInterest").show();
+                        } else {
+                            $("#otherInterest").hide();
+                        }
+                    });
+                });
+            </script>
+
+
+
+    
+            <span id="interestError" class="error"></span><br><br>
+
+            <!-- file element -->
+            <label for="myfile">Upload Resume:</label>
+            <input type="file" id="myfile" name="myfile" onchange="getImagePreview(event)">
+            <div id="imagediv"></div>
+            <span id="fileError" class="error"></span><br><br>
+
+            <button type="submit" value="Submit">Submit</button>
+            <input type="button" value="print details" onclick="validateform()">
+
+        </fieldset>
+    </form>
+ <script>
+function getImagePreview(event){
+    var image = URL.createObjectURL(event.target.files[0]);
+    var imagediv = document.getElementById("preview");
+    var newimg = document.createElement('img');
+    newimg.src=image;
+
+    newimg.classList.add('col-lg-5','col-sm-5','col-md-5','rounded-5')
+    imagediv.appendChild(newimg);
+}
+</script> 
+</body>
+
+</html>
